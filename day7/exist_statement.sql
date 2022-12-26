@@ -71,3 +71,7 @@ where section = all(select section from details where section =802 );
 
 select * from student
 where id  = ALL (select id from details where section =802);
+
+--not working
+select * from student
+where id = all (select id from details where section >=1);

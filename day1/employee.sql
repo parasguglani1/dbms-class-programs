@@ -28,8 +28,8 @@ desc employee;
 
 update employee set phone=8630539308
 where emp_id=1;
--- delete from employee
--- where emp_id=5;
+delete from employee
+where emp_id=5;
 
 --adding a constraint
 -- ALTER TABLE employee
