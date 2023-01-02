@@ -24,5 +24,13 @@ WHERE
     l1.Id = l2.Id - 1
     AND l2.Id = l3.Id - 1
     AND l1.Num = l2.Num
-    AND l2.Num = l3.Num
-;
+    AND l2.Num = l3.Num;
+
+
+SELECT DISTINCT num
+FROM
+(
+SELECT num,LEAD(num) OVER(ORDER BY id) AS lead, LAG(num) OVER (ORDER BY id) AS lag
+FROM logs
+)t
+WHERE num=lead and num=lag;
